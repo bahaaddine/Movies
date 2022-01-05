@@ -1,38 +1,34 @@
 .App {
   text-align: center;
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/e18a2828465323.55c16ef604e61.jpg);
+  /* (./component/movies/cinema-wallpaper-social-media-message-background-vector.jpg); */
+  -webkit-animation: backgroundScroll 20s linear infinite;
+animation: backgroundScroll 20s linear infinite;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.baha {
+  width:50% ;
+  display: flex
+}
+
+.movieList {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  column-gap: 5%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fa-star {
+  color: gold;
 }

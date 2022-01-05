@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Navbar from './Components/Navbar';
+import Filter from './Components/Filter';
+import Add from './Components/Add';
+import MoviesList from './Components/MovieList';
+import {movies} from './Components/movies'
+import {useState} from 'react'
 function App() {
+
+const [movieList,setmovieList]=useState(movies)
+    ///
+    const addHandler= (newMovie)=> {
+      setmovieList([...movieList,newMovie])
+    }
+      ////get the data
+
+  const [search,setsearch] = useState("")
+
+    ////get the data
+
+  const [rating,setrating] = useState("5")
+
+
+  console.log(movieList);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Navbar/>
+  <Filter setsearch={setsearch}   rating={rating} setrating={setrating} />
+  <Add addHandler= {addHandler} />
+  <MoviesList movieList= {movieList} search ={search} rating={rating} />
     </div>
   );
 }
